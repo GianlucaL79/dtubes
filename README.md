@@ -8,7 +8,6 @@
 * **Qualità HD:** Supporta il download in alta definizione (HD) per un'esperienza visiva e sonora superiore.
 * **Interfaccia Utente Intuitiva:** Un design pulito e reattivo che rende il processo di download semplice e immediato.
 * **Selezione Formato:** Scegli tra le diverse qualità e formati video/audio disponibili per ogni contenuto.
-* **Sottotitoli (Opzionale):** Funzionalità per il download dei sottotitoli disponibili (se implementata).
 * **Pulizia Automatica:** I file scaricati sul server vengono eliminati automaticamente dopo un certo periodo per mantenere pulito lo spazio di archiviazione (configurabile).
 * **Tecnologie Moderne:** Basato su Flask per il backend e un frontend moderno con HTML, CSS (Bootstrap) e JavaScript.
 
@@ -16,13 +15,13 @@
 
 Qui puoi inserire gli screenshot chiave del tuo progetto. Caricali direttamente su GitHub e poi linkali qui.
 
-![Screenshot Pagina Principale](https://github.com/tuo-username/tuo-repo-nome/blob/main/docs/screenshot_main.png)
+![Screenshot Pagina Principale](https://github.com/GianlucaL79/dtubes/blob/main/docs/screenshot_main.png)
 _Screenshot 1: La pagina principale con l'input URL._
 
-![Screenshot Opzioni di Download](https://github.com/tuo-username/tuo-repo-nome/blob/main/docs/screenshot_download_options.png)
+![Screenshot Opzioni di Download](https://github.com/GianlucaL79/dtubes/blob/main/docs/screenshot_download_options.png)
 _Screenshot 2: Le opzioni di download video e audio disponibili dopo l'analisi._
 
-![Screenshot Dropdown Formats](https://github.com/tuo-username/tuo-repo-nome/blob/main/docs/screenshot_dropdown_formats.png)
+![Screenshot Dropdown Formats](https://github.com/GianlucaL79/dtubes/blob/main/docs/screenshot_dropdown_formats.png)
 _Screenshot 3: Dettaglio del menu a tendina per la selezione dei formati._
 
 ## Come Funziona
@@ -38,8 +37,7 @@ Per eseguire Dtube localmente, avrai bisogno di:
 
 * [Python](https://www.python.org/downloads/) (versione 3.8 o superiore raccomandata)
 * [pip](https://pip.pypa.io/en/stable/installation/) (gestore di pacchetti per Python)
-* [yt-dlp](https://github.com/yt-dlp/yt-dlp) (la libreria Python per il download da YouTube - il tuo codice usa `yt-dlp`, non `youtube-dl`)
-* [FFmpeg](https://ffmpeg.org/download.html) (necessario per unire audio/video e convertire formati)
+* [yt-dlp](https://github.com/yt-dlp/yt-dlp) (la libreria Python utilizzata per il download da YouTube)
 
 ## Installazione e Avvio Locale
 
@@ -47,10 +45,9 @@ Segui questi passaggi per configurare ed eseguire Dtube sul tuo computer:
 
 1.  **Clona il repository:**
     ```bash
-    git clone [https://github.com/tuo-username/tuo-repo-nome.git](https://github.com/tuo-username/tuo-repo-nome.git)
-    cd tuo-repo-nome
+    git clone [https://github.com/GianlucaL79/dtubes.git](https://github.com/GianlucaL79/dtubes.git)
+    cd dtubes
     ```
-    (Sostituisci `tuo-username` e `tuo-repo-nome` con i dati effettivi del tuo repository.)
 
 2.  **Crea un ambiente virtuale (raccomandato):**
     ```bash
@@ -66,10 +63,7 @@ Segui questi passaggi per configurare ed eseguire Dtube sul tuo computer:
     (Assicurati di avere un file `requirements.txt` nel tuo progetto che elenca tutte le dipendenze come `Flask`, `yt-dlp`, ecc.)
     Se non ce l'hai, puoi crearlo con: `pip freeze > requirements.txt`
 
-4.  **Installa FFmpeg:**
-    Scarica e installa FFmpeg dal suo [sito ufficiale](https://ffmpeg.org/download.html) e assicurati che sia accessibile nel tuo `PATH` di sistema.
-
-5.  **Avvia l'applicazione Flask:**
+4.  **Avvia l'applicazione Flask:**
     ```bash
     export FLASK_APP=app.py # O il nome del tuo file principale, se usi un'organizzazione diversa (es. run.py)
     flask run
@@ -80,7 +74,7 @@ Segui questi passaggi per configurare ed eseguire Dtube sul tuo computer:
     ```
     Dovresti vedere un messaggio che indica che il server è in esecuzione, di solito su `http://127.0.0.1:5000/`.
 
-6.  **Accedi all'applicazione:**
+5.  **Accedi all'applicazione:**
     Apri il tuo browser e vai a `http://127.0.0.1:5000/`.
 
 ## Struttura del Progetto
