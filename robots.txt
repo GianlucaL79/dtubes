@@ -1,0 +1,8 @@
+# robots.txt per DTubes
+User-agent: *
+Allow: /
+Disallow: /static/js/
+Disallow: /static/css/
+
+# Sitemap
+Sitemap: https://tuodominio.com/sitemap.xml

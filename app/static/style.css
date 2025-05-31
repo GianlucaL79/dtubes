@@ -1,0 +1,552 @@
+/* --- RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- BODY & GENERAL --- */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(145deg, #2a2a42, #6c5a8e);
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* --- HEADER --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(145deg, #1a1a2e, #23234b);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffd700; /* Colore del logo */
+}
+
+nav a {
+  /* CAMBIATO: Colore del link "Come funziona" e altri link di navigazione */
+  color: #ffd700; /* Stesso colore del logo */
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* --- MAIN CONTENT --- */
+main {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+main p {
+  color: #dcdcdc;
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* --- INPUT GROUP --- */
+.input-group input[type="text"],
+.input-group input[type="url"] {
+  height: 48px;
+  border-radius: 6px 0 0 6px;
+  padding-left: 15px;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #555;
+  background-color: #f0f0f0;
+}
+
+.input-group .btn {
+  height: 48px;
+  border-radius: 0 6px 6px 0;
+}
+
+#clear-url {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0 12px;
+  vertical-align: middle;
+}
+
+#clear-url:hover {
+  color: #ff0000;
+}
+
+/* --- LOADING SPINNER --- */
+.modern-spinner {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.modern-spinner div {
+  width: 12px;
+  height: 12px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.modern-spinner .bounce1 {
+  animation-delay: -0.32s;
+}
+.modern-spinner .bounce2 {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  } 40% {
+    transform: scale(1.0);
+  }
+}
+
+/* --- VIDEO INFO DISPLAY (dopo aver incollato l'URL) --- */
+.video-details-container {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  text-align: left;
+}
+
+.video-thumbnail {
+  max-width: 240px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-title {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.video-uploader {
+  font-size: 0.95rem;
+  color: #ffd700 !important; /* MODIFICATO: Colore come il logo con !important */
+  margin-bottom: 0.4rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.video-duration {
+  font-size: 0.9rem;
+  color: #b0e0e6;
+  margin-bottom: 0.4rem;
+  text-align: center;
+  font-style: italic;
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* --- ETICHETTA PER SELETTORE FORMATO --- */
+.format-select-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #ffd700 !important; /* MODIFICATO: Colore come il logo con !important */
+  font-weight: 500;
+  text-align: left;
+}
+
+/* --- CUSTOM DROPDOWN (Menu a tendina per formati) --- */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+  background-color: #0056b3;
+}
+
+.dropdown-toggle .arrow {
+  margin-left: 10px;
+  border-top-color: #ffffff;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  border-radius: 8px;
+  z-index: 100;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* MODIFICATO: Allineamento degli elementi all'interno di ogni voce del dropdown */
+.dropdown-menu li {
+  display: flex; /* Usa Flexbox */
+  justify-content: space-between; /* Spazia gli elementi equamente */
+  align-items: center; /* Allinea verticalmente al centro */
+  padding: 12px 16px;
+  cursor: pointer;
+  color: #212529;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  gap: 8px; /* Spazio tra gli elementi */
+}
+
+/* Potresti voler dare una larghezza fissa o flex-basis a ciascun span per un allineamento più preciso */
+.dropdown-menu li .format-type {
+  flex-basis: 15%; /* Esempio: occupa il 15% dello spazio */
+  font-weight: bold;
+  text-align: left; /* Mantieni allineato a sinistra */
+}
+.dropdown-menu li .format-detail {
+  flex-basis: 45%; /* Esempio: occupa il 45% dello spazio */
+  text-align: center; /* CAMBIATO: Centra il testo all'interno di questo span */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dropdown-menu li span:nth-child(3) { /* Il span della dimensione */
+  flex-basis: 25%; /* Esempio: occupa il 25% dello spazio */
+  text-align: center; /* CAMBIATO: Centra il testo all'interno di questo span */
+  font-size: 0.9rem;
+  color: #555;
+}
+.dropdown-menu li .format-ext {
+  flex-basis: 15%; /* Esempio: occupa il 15% dello spazio */
+  text-align: right;
+  font-weight: bold;
+}
+
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+.custom-dropdown.open .dropdown-menu {
+  display: block;
+}
+
+/* --- BUTTONS --- */
+.btn {
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+
+/* --- INFO SECTION (sezione in fondo alla pagina) --- */
+.info {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 12px;
+}
+
+.info h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  color: #ffd700;
+}
+
+.info p {
+  color: #c0c0c0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- FOOTER --- */
+footer {
+  margin-top: 4rem;
+  padding: 1.5rem 0;
+  text-align: center;
+  color: #b0b0b0;
+  font-size: 0.9rem;
+}
+
+/* --- VIDEO RESULT BOX (contenitore per thumbnail, titolo, formati e download) --- */
+.video-result {
+  background-color: rgba(20, 20, 30, 0.6);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+.video-result:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  transform: translateY(-4px);
+}
+
+.video-result .video-thumbnail {
+  margin-bottom: 1.5rem;
+}
+
+.video-result .video-info-text {
+  margin-bottom: 1.5rem;
+}
+
+.video-result .video-info-text h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.75rem;
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.video-result .video-info-text p.video-uploader {
+    color: #ffd700 !important; /* MODIFICATO: Colore come il logo con !important */
+    font-weight: 500;
+}
+.video-result .video-info-text p.video-duration {
+    color: #b0e0e6;
+    font-style: italic;
+    background-color: rgba(0,0,0,0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+
+/* --- FORMAT SELECTOR & DOWNLOAD BUTTON (dentro .video-result) --- */
+.format-group {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.format-group .custom-dropdown {
+  flex: 1 1 250px;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.format-group .btn-download {
+  background: linear-gradient(135deg, #00b894, #00cec9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.format-group .btn-download:hover {
+  background: linear-gradient(135deg, #00cec9, #00b894);
+  transform: translateY(-2px) scale(1.02);
+}
+.format-group .btn-download:active {
+  transform: translateY(0px) scale(1);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+  main h1 {
+    font-size: 1.9rem;
+  }
+  main p {
+    font-size: 1rem;
+  }
+  .video-result .video-info-text h3 {
+    font-size: 1.5rem;
+  }
+  .video-result .video-info-text p {
+    font-size: 0.95rem;
+  }
+  .video-thumbnail {
+    max-width: 200px;
+  }
+  .format-select-label {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  /* MODIFICATO: Allineamento dropdown responsivo */
+  .dropdown-menu li {
+    flex-wrap: wrap; /* Permetti ai span di andare a capo se non c'è spazio */
+    justify-content: flex-start; /* Allinea a sinistra quando vanno a capo */
+  }
+  .dropdown-menu li .format-type,
+  .dropdown-menu li .format-detail,
+  .dropdown-menu li span:nth-child(3),
+  .dropdown-menu li .format-ext {
+    flex-basis: auto; /* Rimuovi la larghezza fissa */
+    width: auto;
+    text-align: left;
+  }
+  .dropdown-menu li .format-type {
+    width: 100%; /* Occupa tutta la larghezza per il tipo */
+    margin-bottom: 4px;
+  }
+  .dropdown-menu li .format-detail {
+    flex-grow: 1; /* Permetti al dettaglio di crescere e occupare spazio */
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+  nav {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    margin: 0.3rem 0.5rem;
+  }
+  main {
+    margin: 1.5rem auto;
+    padding: 0 0.8rem;
+  }
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .input-group input[type="text"],
+  .input-group input[type="url"],
+  .input-group .btn {
+    width: 100%;
+    border-radius: 6px;
+  }
+  #clear-url {
+    align-self: flex-end;
+    margin-top: -40px;
+    margin-right: 8px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .format-group {
+    flex-direction: column;
+  }
+  .format-group .custom-dropdown,
+  .format-group .btn-download {
+    width: 100%;
+    max-width: none;
+  }
+  .video-result {
+    padding: 1.5rem;
+  }
+   .video-thumbnail {
+    max-width: 180px;
+  }
+  .video-result .video-info-text h3 {
+    font-size: 1.4rem;
+  }
+  .video-result .video-info-text p.video-uploader,
+  .video-result .video-info-text p.video-duration {
+    font-size: 0.9rem;
+  }
+  .dropdown-toggle {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+  .dropdown-menu li {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+  .format-group .btn-download {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+  .format-select-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+}
